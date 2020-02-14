@@ -16,7 +16,7 @@ FIND_PACKAGE(EXPAT REQUIRED)
 
 
 
-#find_package(Boost 1.50 REQUIRED COMPONENTS system filesystem)
+#find_package(Boost 1.50 REQUIRED COMPONENTS system filesystem program_options)
 find_package(Boost 1.50 REQUIRED COMPONENTS system filesystem)
 include_directories(SYSTEM ${Boost_INCLUDE_DIR})
 
