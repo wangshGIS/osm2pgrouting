@@ -15,8 +15,9 @@ find_package(LibPQXX REQUIRED)
 FIND_PACKAGE(EXPAT REQUIRED)
 
 
+find_package(Boost REQUIRED)
 
-find_package(Boost 1.50 REQUIRED COMPONENTS system filesystem program-options)
+#find_package(Boost 1.50 REQUIRED COMPONENTS system filesystem program-options)
 #find_package(Boost 1.50 REQUIRED COMPONENTS system filesystem)
 include_directories(SYSTEM ${Boost_INCLUDE_DIR})
 
