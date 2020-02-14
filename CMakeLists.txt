@@ -15,14 +15,19 @@ find_package(LibPQXX REQUIRED)
 FIND_PACKAGE(EXPAT REQUIRED)
 
 
-FIND_PACKAGE(Boost)
-if(Boost_INCLUDE_DIRS)
-    message(STATUS "Boost headers were found here: ${Boost_INCLUDE_DIRS}")
-else(Boost_INCLUDE_DIRS)
-    message(FATAL_ERROR " Please check your Boost installation ")
-endif(Boost_INCLUDE_DIRS)
 
-FIND_PACKAGE(Boost COMPONENTS program_options REQUIRED)
+#find_package(Boost 1.50 REQUIRED COMPONENTS system filesystem)
+find_package(Boost 1.50 REQUIRED COMPONENTS system filesystem)
+include_directories(SYSTEM ${Boost_INCLUDE_DIR})
+
+#FIND_PACKAGE(Boost)
+#if(Boost_INCLUDE_DIRS)
+#    message(STATUS "Boost headers were found here: ${Boost_INCLUDE_DIRS}")
+#else(Boost_INCLUDE_DIRS)
+#    message(FATAL_ERROR " Please check your Boost installation ")
+#endif(Boost_INCLUDE_DIRS)
+
+#FIND_PACKAGE(Boost COMPONENTS program_options REQUIRED)
 
 FILE(GLOB osm2pgrouting_lib_SOURCES "${CMAKE_SOURCE_DIR}/src/*/*.cpp")
 
